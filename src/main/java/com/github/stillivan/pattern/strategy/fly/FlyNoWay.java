@@ -1,7 +1,7 @@
 package com.github.stillivan.pattern.strategy.fly;
 
 /**
- * 不能飞
+ * 不能飞.
  * Created by charming on 16/8/28.
  */
 public class FlyNoWay implements FlyBehavior {

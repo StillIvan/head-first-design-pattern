@@ -1,6 +1,7 @@
 package com.github.stillivan.pattern.strategy.fly;
 
 /**
+ * 用翅膀飞.
  * Created by charming on 16/8/28.
  */
 public class FlyWithWings implements FlyBehavior {
