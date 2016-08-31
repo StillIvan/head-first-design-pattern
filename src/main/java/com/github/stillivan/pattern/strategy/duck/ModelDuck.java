@@ -4,6 +4,7 @@ import com.github.stillivan.pattern.strategy.fly.FlyNoWay;
 import com.github.stillivan.pattern.strategy.quack.Quack;
 
 /**
+ * 模型鸭
  * Created by charming on 16/8/28.
  */
 public class ModelDuck extends Duck {

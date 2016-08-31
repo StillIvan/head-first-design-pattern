@@ -4,6 +4,7 @@ import com.github.stillivan.pattern.strategy.fly.FlyBehavior;
 import com.github.stillivan.pattern.strategy.quack.QuackBehavior;
 
 /**
+ * 鸭子抽象类
  * Created by charming on 16/8/28.
  */
 public abstract class Duck {
