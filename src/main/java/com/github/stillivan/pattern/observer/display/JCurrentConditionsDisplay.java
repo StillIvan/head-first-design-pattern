@@ -6,6 +6,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
+ * 展示现在的数据,实现 Java 自带的观察者接口
  * Created by charming on 16/8/30.
  */
 public class JCurrentConditionsDisplay implements Observer, DisplayElement {

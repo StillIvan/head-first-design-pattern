@@ -8,6 +8,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
+ * 展示平均、最大、最小温度,Java 自带的观察者实现
  * Created by charming on 16/8/29.
  */
 public class JStaticsDisplay implements DisplayElement, Observer {

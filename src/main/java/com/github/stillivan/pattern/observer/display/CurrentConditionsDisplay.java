@@ -4,6 +4,7 @@ import com.github.stillivan.pattern.observer.core.Observer;
 import com.github.stillivan.pattern.observer.core.Subject;
 
 /**
+ * 纯展示现在的数据
  * Created by charming on 16/8/29.
  */
 public class CurrentConditionsDisplay implements Observer, DisplayElement {

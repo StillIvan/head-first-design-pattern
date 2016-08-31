@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 统计数据展示平均、最大、最小温度
  * Created by charming on 16/8/29.
  */
 public class StaticsDisplay implements DisplayElement, Observer {

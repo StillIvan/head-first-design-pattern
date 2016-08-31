@@ -6,6 +6,7 @@ import com.github.stillivan.pattern.observer.core.Subject;
 import java.util.ArrayList;
 
 /**
+ * 天气数据源
  * Created by charming on 16/8/29.
  */
 public class WeatherData implements Subject {
