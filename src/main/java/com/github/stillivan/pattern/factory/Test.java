@@ -1,5 +1,6 @@
 package com.github.stillivan.pattern.factory;
 
+import com.github.stillivan.pattern.factory.abstraction.NYPizzaStore;
 import com.github.stillivan.pattern.factory.method.ChicagoStylePizzaStore;
 import com.github.stillivan.pattern.factory.method.NYStylePizzaStore;
 import com.github.stillivan.pattern.factory.method.Pizza;
@@ -17,7 +18,14 @@ public class Test {
         pizza = chicagoPizzaStore.orderPizza("cheese");
     }
 
+    public static void abstractionTest() {
+        NYPizzaStore nyPizzaStore = new NYPizzaStore();
+
+        com.github.stillivan.pattern.factory.abstraction.Pizza pizza = nyPizzaStore.orderPizza("clam");
+    }
+
     public static void main(String[] args) {
-        methodTest();
+        //methodTest();
+        abstractionTest();
     }
 }
