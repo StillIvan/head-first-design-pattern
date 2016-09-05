@@ -14,6 +14,8 @@ import com.github.stillivan.pattern.command.remote.SimpleRemoteControl;
 import com.github.stillivan.pattern.command.remote.Stereo;
 import com.github.stillivan.pattern.command.remote.StereoOffCommand;
 import com.github.stillivan.pattern.command.remote.StereoOnWithCDCommand;
+import com.github.stillivan.pattern.command.undo.CeilingFanHighCommand;
+import com.github.stillivan.pattern.command.undo.CeilingFanMediumCommand;
 import com.github.stillivan.pattern.command.undo.RemoteControlWithUndo;
 
 /**
@@ -89,9 +91,32 @@ public class Test {
         remoteControlWithUndo.undoButtonPushed();
     }
 
+    public static void ceilingFanUndoTest() {
+        RemoteControlWithUndo remoteControlWithUndo = new RemoteControlWithUndo();
+
+        com.github.stillivan.pattern.command.undo.CeilingFan ceilingFan = new com.github.stillivan.pattern.command.undo.CeilingFan("Living room");
+
+        CeilingFanMediumCommand mediumCommand = new CeilingFanMediumCommand(ceilingFan);
+        CeilingFanHighCommand highCommand = new CeilingFanHighCommand(ceilingFan);
+        com.github.stillivan.pattern.command.undo.CeilingFanOffCommand offCommand = new com.github.stillivan.pattern.command.undo.CeilingFanOffCommand(ceilingFan);
+
+        remoteControlWithUndo.setCommand(0, mediumCommand, offCommand);
+        remoteControlWithUndo.setCommand(1, highCommand, offCommand);
+
+        remoteControlWithUndo.onButtonPushed(0);
+        remoteControlWithUndo.offButtonPushed(0);
+        System.out.println(remoteControlWithUndo);
+        remoteControlWithUndo.undoButtonPushed();
+
+        remoteControlWithUndo.onButtonPushed(1);
+        System.out.println(remoteControlWithUndo);
+        remoteControlWithUndo.undoButtonPushed();
+    }
+
     public static void main(String[] args) {
         //simpleRemoteTest();
         //remoteTest();
-        remoteControlWithUndoTest();
+        //remoteControlWithUndoTest();
+        ceilingFanUndoTest();
     }
 }

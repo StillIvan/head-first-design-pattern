@@ -4,18 +4,18 @@ package com.github.stillivan.pattern.command.undo;
  * @author Charming
  * @since 2016-09-05 16:58
  */
-public class CeilingFanOffCommand implements Command {
+public class CeilingFanLowCommand implements Command {
     private CeilingFan ceilingFan;
     private int prevSpeed;
 
-    public CeilingFanOffCommand(CeilingFan ceilingFan) {
+    public CeilingFanLowCommand(CeilingFan ceilingFan) {
         this.ceilingFan = ceilingFan;
     }
 
     @Override
     public void execute() {
         prevSpeed = ceilingFan.getSpeed();
-        ceilingFan.off();
+        ceilingFan.low();
     }
 
     @Override
