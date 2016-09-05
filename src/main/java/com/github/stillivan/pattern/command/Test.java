@@ -14,6 +14,7 @@ import com.github.stillivan.pattern.command.remote.SimpleRemoteControl;
 import com.github.stillivan.pattern.command.remote.Stereo;
 import com.github.stillivan.pattern.command.remote.StereoOffCommand;
 import com.github.stillivan.pattern.command.remote.StereoOnWithCDCommand;
+import com.github.stillivan.pattern.command.undo.RemoteControlWithUndo;
 
 /**
  * @author Charming
@@ -69,8 +70,28 @@ public class Test {
         }
     }
 
+    public static void remoteControlWithUndoTest() {
+        RemoteControlWithUndo remoteControlWithUndo = new RemoteControlWithUndo();
+
+        com.github.stillivan.pattern.command.undo.Light light = new com.github.stillivan.pattern.command.undo.Light();
+        com.github.stillivan.pattern.command.undo.LightOnCommand lightOnCommand = new com.github.stillivan.pattern.command.undo.LightOnCommand(light);
+        com.github.stillivan.pattern.command.undo.LightOffCommand lightOffCommand = new com.github.stillivan.pattern.command.undo.LightOffCommand(light);
+
+        remoteControlWithUndo.setCommand(0, lightOnCommand, lightOffCommand);
+
+        remoteControlWithUndo.onButtonPushed(0);
+        remoteControlWithUndo.offButtonPushed(0);
+        System.out.println(remoteControlWithUndo);
+        remoteControlWithUndo.undoButtonPushed();
+        remoteControlWithUndo.offButtonPushed(0);
+        remoteControlWithUndo.onButtonPushed(0);
+        System.out.println(remoteControlWithUndo);
+        remoteControlWithUndo.undoButtonPushed();
+    }
+
     public static void main(String[] args) {
         //simpleRemoteTest();
-        remoteTest();
+        //remoteTest();
+        remoteControlWithUndoTest();
     }
 }
