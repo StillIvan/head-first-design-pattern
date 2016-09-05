@@ -1,8 +1,10 @@
 package com.github.stillivan.pattern.command;
 
+import com.github.stillivan.pattern.command.party.MacroCommand;
 import com.github.stillivan.pattern.command.remote.CeilingFan;
 import com.github.stillivan.pattern.command.remote.CeilingFanOffCommand;
 import com.github.stillivan.pattern.command.remote.CeilingFanOnCommand;
+import com.github.stillivan.pattern.command.remote.Command;
 import com.github.stillivan.pattern.command.remote.GarageDoor;
 import com.github.stillivan.pattern.command.remote.GarageDoorDownCommand;
 import com.github.stillivan.pattern.command.remote.GarageDoorOpenCommand;
@@ -113,10 +115,36 @@ public class Test {
         remoteControlWithUndo.undoButtonPushed();
     }
 
+    public static void partyTest() {
+        Light light = new Light();
+        Stereo stereo = new Stereo();
+        CeilingFan ceilingFan = new CeilingFan();
+
+        LightOnCommand lightOn = new LightOnCommand(light);
+        LightOffCommand lightOff = new LightOffCommand(light);
+        StereoOnWithCDCommand stereoOn = new StereoOnWithCDCommand(stereo);
+        StereoOffCommand stereoOff = new StereoOffCommand(stereo);
+        CeilingFanOnCommand ceilingFanOn = new CeilingFanOnCommand(ceilingFan);
+        CeilingFanOffCommand ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
+
+        Command[] partyOn = {lightOn, stereoOn, ceilingFanOn};
+        Command[] partyOff = {lightOff, stereoOff, ceilingFanOff};
+
+        MacroCommand partyOnMacro = new MacroCommand(partyOn);
+        MacroCommand partyOffMacro = new MacroCommand(partyOff);
+
+        RemoteControl remoteControl = new RemoteControl();
+        remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
+
+        remoteControl.onButtonPushed(0);
+        remoteControl.offButtonPushed(0);
+    }
+
     public static void main(String[] args) {
         //simpleRemoteTest();
         //remoteTest();
         //remoteControlWithUndoTest();
-        ceilingFanUndoTest();
+        //ceilingFanUndoTest();
+        partyTest();
     }
 }
