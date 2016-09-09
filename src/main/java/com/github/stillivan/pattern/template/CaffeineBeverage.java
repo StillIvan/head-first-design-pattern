@@ -12,15 +12,24 @@ public abstract class CaffeineBeverage {
         addCondiments();
     }
 
+    /**
+     * 加调料.
+     */
     abstract void addCondiments();
-
-    private void pourInCup() {
-        System.out.println("Pouring into cup.");
-    }
 
     abstract void brew();
 
+    /**
+     * 把谁烧开.
+     */
     private void boilWater() {
         System.out.println("Boiling water.");
+    }
+
+    /**
+     * 把水倒进水杯.
+     */
+    private void pourInCup() {
+        System.out.println("Pouring into cup.");
     }
 }
