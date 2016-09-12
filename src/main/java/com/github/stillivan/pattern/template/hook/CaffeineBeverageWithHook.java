@@ -1,15 +1,17 @@
-package com.github.stillivan.pattern.template;
+package com.github.stillivan.pattern.template.hook;
 
 /**
  * @author Charming
  * @since 2016-09-08 23:54
  */
-public abstract class CaffeineBeverage {
-    final void prepareRecipe() {
+public abstract class CaffeineBeverageWithHook {
+    public final void prepareRecipe() {
         boilWater();
         brew();
         pourInCup();
-        addCondiments();
+        if (customerWantsCondiments()) {
+            addCondiments();
+        }
     }
 
     /**
@@ -18,6 +20,10 @@ public abstract class CaffeineBeverage {
     abstract void addCondiments();
 
     abstract void brew();
+
+    boolean customerWantsCondiments() {
+        return true;
+    }
 
     /**
      * 把谁烧开.

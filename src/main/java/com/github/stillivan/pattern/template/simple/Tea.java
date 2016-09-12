@@ -1,4 +1,4 @@
-package com.github.stillivan.pattern.template;
+package com.github.stillivan.pattern.template.simple;
 
 /**
  * @author Charming
