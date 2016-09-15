@@ -1,6 +1,8 @@
 package com.github.stillivan.pattern.iterator;
 
 /**
+ * 服务员.
+ *
  * @author Charming
  * @since 2016-09-13 23:46
  */
@@ -13,6 +15,9 @@ public class Waitress {
         this.dinnerMenu = dinnerMenu;
     }
 
+    /**
+     * 不需要知道怎么遍历实现.
+     */
     public void printMenu() {
         Iterator dinnerIterator = dinnerMenu.createIterator();
         printMenu(dinnerIterator);
