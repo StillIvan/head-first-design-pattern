@@ -17,6 +17,10 @@ public class Menu extends MenuComponent {
         this.description = description;
     }
 
+    public Iterator createIterator() {
+        return new CompositeIterator(menuComponents.iterator());
+    }
+
     public void add(MenuComponent menuComponent) {
         menuComponents.add(menuComponent);
     }
