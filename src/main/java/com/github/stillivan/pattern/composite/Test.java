@@ -1,5 +1,7 @@
 package com.github.stillivan.pattern.composite;
 
+import java.util.Iterator;
+
 /**
  * @author Charming
  * @since 2016-09-17 23:13
@@ -34,6 +36,7 @@ public class Test {
 
         Waitress waitress = new Waitress(allMenus);
         waitress.printMenu();
+        waitress.printVegetarianMenu();
     }
 
     public static void main(String[] args) {

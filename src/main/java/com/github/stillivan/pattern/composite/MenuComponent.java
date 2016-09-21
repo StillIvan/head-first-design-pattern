@@ -1,5 +1,7 @@
 package com.github.stillivan.pattern.composite;
 
+import java.util.Iterator;
+
 /**
  * @author Charming
  * @since 2016-09-16 23:50
@@ -36,4 +38,6 @@ public abstract class MenuComponent {
     public void print() {
         throw new UnsupportedOperationException();
     }
+
+    public abstract Iterator createIterator();
 }
