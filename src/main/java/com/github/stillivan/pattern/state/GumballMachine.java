@@ -5,4 +5,6 @@ package com.github.stillivan.pattern.state;
  * @since 2016-10-07 23:32
  */
 public class GumballMachine {
+
+
 }
