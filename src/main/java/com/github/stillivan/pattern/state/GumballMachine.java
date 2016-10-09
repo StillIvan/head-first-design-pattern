@@ -6,5 +6,4 @@ package com.github.stillivan.pattern.state;
  */
 public class GumballMachine {
 
-
 }
