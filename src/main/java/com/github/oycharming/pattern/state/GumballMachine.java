@@ -49,4 +49,20 @@ public class GumballMachine {
     public int getCount() {
         return count;
     }
+
+    public void insertQuarter() {
+        state.insertQuarter();
+    }
+
+    public void ejectQuarter() {
+        state.ejectQuarter();
+    }
+
+    public void turnCrank() {
+        state.turnCrank();
+    }
+
+    public void dispense() {
+        state.dispense();
+    }
 }
