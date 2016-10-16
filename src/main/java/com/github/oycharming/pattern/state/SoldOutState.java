@@ -28,6 +28,6 @@ public class SoldOutState implements State {
 
     @Override
     public void dispense() {
-
+        System.out.println("No gumball dispensed.");
     }
 }
